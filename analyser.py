@@ -6,9 +6,9 @@ Usage :
 """
 
 import argparse
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from typing import List, Literal
+from typing import Callable, List, Literal
 
 import anthropic
 import pandas as pd
@@ -33,10 +33,7 @@ class Classification(BaseModel):
     resume: str = Field(description="Point principal de l'avis, 10 mots maximum")
 
 
-client = anthropic.Anthropic()
-
-
-def classify(review: str) -> Classification | None:
+def classify(review: str, client: anthropic.Anthropic) -> Classification | None:
     """Envoie un avis à Claude et renvoie sa classification validée."""
     response = client.messages.parse(
         model=MODEL,
@@ -50,6 +47,36 @@ def classify(review: str) -> Classification | None:
     return response.parsed_output
 
 
+def classify_dataframe(
+    df: pd.DataFrame,
+    client: anthropic.Anthropic,
+    workers: int = 5,
+    on_progress: Callable[[int, int], None] | None = None,
+) -> pd.DataFrame:
+    """Classifie la colonne `avis` et ajoute les colonnes sentiment, themes et resume."""
+
+    def safe_classify(review_id, text):
+        try:
+            return classify(text, client)
+        except anthropic.APIError as e:
+            print(f"  [avis {review_id}] erreur API : {e}")
+            return None
+
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = [pool.submit(safe_classify, i, t) for i, t in zip(df["id"], df["avis"])]
+        # La progression est signalée depuis le thread principal (requis par Streamlit)
+        for done, _ in enumerate(as_completed(futures), start=1):
+            if on_progress:
+                on_progress(done, len(df))
+        results = [f.result() for f in futures]
+
+    df = df.copy()
+    df["sentiment"] = [r.sentiment if r else None for r in results]
+    df["themes"] = ["|".join(r.themes) if r else None for r in results]
+    df["resume"] = [r.resume if r else None for r in results]
+    return df
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default="data/avis.csv")
@@ -59,27 +86,16 @@ def main() -> None:
 
     df = pd.read_csv(args.input)
     print(f"{len(df)} avis à classifier avec {MODEL}...")
-
-    def safe_classify(item):
-        review_id, text = item
-        try:
-            result = classify(text)
-        except anthropic.APIError as e:
-            print(f"  [avis {review_id}] erreur API : {e}")
-            return None
-        print(f"  [avis {review_id}] {result.sentiment if result else 'refusé'}")
-        return result
-
-    with ThreadPoolExecutor(max_workers=args.workers) as pool:
-        results = list(pool.map(safe_classify, zip(df["id"], df["avis"])))
-
-    df["sentiment"] = [r.sentiment if r else None for r in results]
-    df["themes"] = ["|".join(r.themes) if r else None for r in results]
-    df["resume"] = [r.resume if r else None for r in results]
+    df = classify_dataframe(
+        df,
+        anthropic.Anthropic(),
+        workers=args.workers,
+        on_progress=lambda done, total: print(f"  {done}/{total}", end="\r"),
+    )
 
     Path(args.output).parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(args.output, index=False)
-    failed = sum(r is None for r in results)
+    failed = df["sentiment"].isna().sum()
     print(f"Terminé : {args.output} ({failed} échec(s))")
 
 
