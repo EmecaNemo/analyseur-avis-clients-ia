@@ -1,0 +1,61 @@
+id,commerce,date,note,avis,sentiment,themes,resume
+1,Boulangerie Le Fournil,2026-01-04,5,"Le pain au levain est incroyable, croustillant et bien aéré. La vendeuse est toujours souriante.",positif,qualité|service,Pain excellent et vendeur accueillant toujours souriant.
+2,Boulangerie Le Fournil,2026-01-06,2,"Les croissants étaient secs et 1,60 € pièce c'est vraiment excessif pour cette qualité.",négatif,qualité|prix,Croissants secs et tarif excessif pour la qualité
+3,Boulangerie Le Fournil,2026-01-09,4,"Très bonnes viennoiseries, un peu d'attente le dimanche matin mais ça vaut le coup.",positif,qualité|service,Excellentes viennoiseries malgré l'attente dominicale
+4,Boulangerie Le Fournil,2026-01-12,1,On m'a rendu la monnaie en soupirant et on ne m'a même pas dit bonjour. Plus jamais.,négatif,service,"Accueil désagréable, pas de politesse basique."
+5,Boulangerie Le Fournil,2026-01-15,3,Correct sans plus. Les prix ont augmenté depuis l'année dernière.,neutre,prix,Prix augmentés depuis l'année dernière
+6,Boulangerie Le Fournil,2026-01-19,5,"La meilleure tarte au citron du quartier, et le rapport qualité-prix est imbattable.",positif,qualité|prix,Meilleure tarte au citron avec excellent rapport qualité-prix
+7,Boulangerie Le Fournil,2026-01-22,2,"Baguette pas assez cuite deux fois de suite. Dommage, c'était ma boulangerie préférée.",négatif,qualité,"Baguettes mal cuites, déception de client fidèle."
+8,Boulangerie Le Fournil,2026-01-27,4,Personnel sympathique et produits frais. Le choix de sandwichs est un peu limité le midi.,positif,service|qualité,"Personnel sympathique, produits frais, choix de sandwichs limité."
+9,Boulangerie Le Fournil,2026-02-02,1,"Trop cher : 7 € pour un sandwich jambon-beurre, c'est du vol.",négatif,prix,Sandwich jambon-beurre surpricé à sept euros.
+10,Boulangerie Le Fournil,2026-02-05,5,"Accueil chaleureux, conseils sur les pains spéciaux, je recommande.",positif,service|qualité,Accueil chaleureux et bons conseils sur pains spéciaux
+11,Boulangerie Le Fournil,2026-02-09,3,Les gâteaux sont beaux mais trop sucrés à mon goût.,négatif,qualité,Gâteaux beaux mais trop sucrés.
+12,Boulangerie Le Fournil,2026-02-14,2,File d'attente interminable et une seule personne en caisse pendant le rush.,négatif,service,"File d'attente trop longue, une seule caisse ouverte."
+13,Boulangerie Le Fournil,2026-02-18,4,"Bon pain complet, prix raisonnables pour Paris.",positif,qualité|prix,Bon pain complet à prix raisonnables
+14,Boulangerie Le Fournil,2026-02-23,1,J'ai trouvé un cheveu dans mon éclair. Le vendeur a haussé les épaules.,négatif,qualité|service,"Cheveu dans l'éclair, vendeur indifférent et non réactif."
+15,Boulangerie Le Fournil,2026-03-01,5,Tout est fait maison et ça se sent. Bravo à toute l'équipe !,positif,qualité,"Produits faits maison, équipe félicitée pour qualité"
+16,Boulangerie Le Fournil,2026-03-05,3,Bonne qualité mais on m'a oublié deux fois alors que j'attendais mon tour.,négatif,service|qualité,Bonne qualité mais oubli répété malgré attente.
+17,Boulangerie Le Fournil,2026-03-10,2,La formule déjeuner est passée de 9 à 11 € sans amélioration.,négatif,prix,Augmentation tarifaire sans amélioration de la formule
+18,Boulangerie Le Fournil,2026-03-14,4,Pain aux céréales excellent. Service rapide.,positif,qualité|service,Pain excellent et service rapide.
+19,Boulangerie Le Fournil,2026-03-19,1,"Les pains au chocolat étaient de la veille, clairement réchauffés.",négatif,qualité,Pains au chocolat rassis et réchauffés
+20,Boulangerie Le Fournil,2026-03-24,5,Une vendeuse adorable qui connaît tous les habitués. Et les produits sont top.,positif,service|qualité,Vendeuse adorable et produits excellents
+21,Restaurant Chez Margot,2026-01-03,5,"Cuisine savoureuse, produits de saison, et un serveur aux petits soins. Soirée parfaite.",positif,qualité|service,"Cuisine excellente et service attentionné, soirée réussie."
+22,Restaurant Chez Margot,2026-01-07,2,"45 minutes d'attente pour le plat principal, et personne ne s'est excusé.",négatif,service,Longue attente sans excuses pour le plat principal
+23,Restaurant Chez Margot,2026-01-11,4,Le bœuf bourguignon était délicieux. L'addition reste un peu salée.,neutre,qualité|prix,"Excellent plat, mais prix élevé"
+24,Restaurant Chez Margot,2026-01-14,1,"Viande trop cuite alors que j'avais demandé saignant, et le serveur a contesté.",négatif,service|qualité,Viande trop cuite et serveur contestataire
+25,Restaurant Chez Margot,2026-01-18,3,"Cadre agréable, cuisine correcte, mais 28 € le plat c'est beaucoup.",neutre,qualité|prix,"Ambiance plaisante, cuisine acceptable, tarifs élevés."
+26,Restaurant Chez Margot,2026-01-21,5,Menu du jour à 19 € d'un excellent rapport qualité-prix. Je reviendrai.,positif,prix|qualité,Menu excellent rapport qualité-prix à 19 euros
+27,Restaurant Chez Margot,2026-01-25,2,Serveuse désagréable qui nous a pressés de partir pour libérer la table.,négatif,service,Serveuse désagréable et pressante avec les clients.
+28,Restaurant Chez Margot,2026-01-30,4,"Desserts maison excellents, service un peu lent mais aimable.",positif,qualité|service,"Excellents desserts maison, service lent mais aimable."
+29,Restaurant Chez Margot,2026-02-03,1,"Plat froid, servi sans pain, et facturé des boissons que nous n'avions pas commandées.",négatif,service|prix|qualité,"Plat froid, pas de pain, facturation erreur boissons"
+30,Restaurant Chez Margot,2026-02-08,3,Pas mal mais les portions sont petites pour le prix.,neutre,prix|qualité,Portions insuffisantes au regard du tarif pratiqué
+31,Restaurant Chez Margot,2026-02-12,5,"Équipe accueillante, carte des vins bien choisie, poisson parfaitement cuit.",positif,service|qualité,"Accueil chaleureux, vins excellents, poisson impeccable."
+32,Restaurant Chez Margot,2026-02-16,2,"Réservation perdue, on nous a fait attendre au bar 30 minutes.",négatif,service,"Réservation perdue, attente excessive au bar."
+33,Restaurant Chez Margot,2026-02-20,4,Très bonne cuisine traditionnelle. Un peu bruyant le samedi soir.,positif,qualité,"Excellente cuisine traditionnelle, ambiance bruyante le samedi."
+34,Restaurant Chez Margot,2026-02-25,1,Intoxication alimentaire après les huîtres. Aucune réponse à mon email.,négatif,qualité|service,"Intoxication alimentaire suite aux huîtres, absence de réponse."
+35,Restaurant Chez Margot,2026-03-02,5,"Le chef est venu saluer les tables, les plats étaient généreux et raffinés.",positif,service|qualité,"Chef attentif, plats généreux et raffinés."
+36,Restaurant Chez Margot,2026-03-06,3,"Entrée excellente, plat décevant. Service correct.",négatif,qualité|service,Entrée excellente mais plat décevant malgré service correct
+37,Restaurant Chez Margot,2026-03-11,2,Le vin au verre à 12 € est franchement abusé.,négatif,prix,Vin au verre trop cher à 12 euros
+38,Restaurant Chez Margot,2026-03-15,4,Accueil souriant et cuisine soignée. Un peu cher mais on se fait plaisir.,positif,service|prix|qualité,"Accueil sympathique, cuisine soignée, prix élevé acceptable."
+39,Restaurant Chez Margot,2026-03-20,1,Le serveur a renversé du vin sur ma veste et n'a rien proposé.,négatif,service,"Serveur renverse du vin, aucune proposition de compensation."
+40,Restaurant Chez Margot,2026-03-25,5,"Rien à redire : qualité, service, prix, tout est au rendez-vous.",positif,service|prix|qualité,"Qualité, service et prix tous satisfaisants."
+41,Épicerie Bio Verte,2026-01-05,4,"Beaux fruits et légumes, producteurs locaux. Un peu plus cher qu'au supermarché.",positif,qualité|prix,Fruits légumes frais de producteurs locaux mais tarifs élevés
+42,Épicerie Bio Verte,2026-01-10,1,"Fromage périmé vendu en rayon, et on m'a refusé le remboursement.",négatif,qualité|service,Fromage périmé refusé en remboursement.
+43,Épicerie Bio Verte,2026-01-13,5,Le gérant prend le temps d'expliquer l'origine des produits. Top !,positif,service,Gérant bienveillant explique l'origine des produits.
+44,Épicerie Bio Verte,2026-01-17,2,"Les prix sont vraiment élevés, 6 € le kilo de pommes.",négatif,prix,Prix des pommes considérés comme trop élevés à six euros
+45,Épicerie Bio Verte,2026-01-23,3,Bon choix de vrac mais souvent en rupture de stock.,neutre,qualité,"Bon choix de vrac, mais ruptures de stock fréquentes."
+46,Épicerie Bio Verte,2026-01-28,4,"Produits de qualité, caissière gentille, j'y vais chaque semaine.",positif,qualité|service,"Qualité excellente et personnel accueillant, visite hebdomadaire"
+47,Épicerie Bio Verte,2026-02-01,2,"Légumes abîmés dans mon panier, je ne l'ai vu qu'une fois rentrée.",négatif,qualité,Légumes abîmés découverts après l'achat.
+48,Épicerie Bio Verte,2026-02-06,5,Excellente sélection de produits locaux à des prix justes.,positif,prix|qualité,Bonne sélection locale avec tarifs équitables
+49,Épicerie Bio Verte,2026-02-11,1,"Personnel froid, aucune aide pour trouver les produits. Et c'est hors de prix.",négatif,service|prix,Personnel froid et produits trop chers sans aide client
+50,Épicerie Bio Verte,2026-02-15,3,"Magasin propre, produits corrects, rien d'exceptionnel.",neutre,qualité,"Magasin propre avec produits corrects, sans particularité."
+51,Épicerie Bio Verte,2026-02-19,4,Le pain bio et les œufs sont excellents. Horaires un peu restreints.,positif,qualité|service,"Excellente qualité, horaires limités."
+52,Épicerie Bio Verte,2026-02-24,2,"On m'a facturé deux fois le même article, la caissière n'a pas voulu vérifier.",négatif,service|prix,Double facturation refusée de vérification par la caissière
+53,Épicerie Bio Verte,2026-03-03,5,"Accueil adorable, conseils précieux, et les promotions de fin de journée sont top.",positif,service|prix,"Accueil adorable et conseils précieux, promotions attrayantes."
+54,Épicerie Bio Verte,2026-03-08,3,Qualité au rendez-vous mais mon budget ne suit pas.,neutre,qualité|prix,Bonne qualité mais prix trop élevés pour le budget
+55,Épicerie Bio Verte,2026-03-12,1,Viande sous vide avec une odeur bizarre. Je n'y achète plus de produits frais.,négatif,qualité,"Viande sous vide avec odeur suspecte, arrêt achat produits frais"
+56,Épicerie Bio Verte,2026-03-16,4,"Très bonne épicerie de quartier, le personnel connaît ses produits.",positif,service|qualité,Excellente épicerie avec personnel compétent et connaisseur.
+57,Épicerie Bio Verte,2026-03-21,2,Le programme fidélité ne compense pas des prix 30 % plus chers qu'ailleurs.,négatif,prix,Programme fidélité insuffisant face aux prix élevés
+58,Épicerie Bio Verte,2026-03-26,5,Fraîcheur irréprochable et équipe très serviable.,positif,qualité|service,Fraîcheur impeccable et équipe serviable
+59,Épicerie Bio Verte,2026-03-28,3,"Bons produits, mais attente en caisse trop longue le samedi.",neutre,service|qualité,"Bons produits, mais attente caisse trop longue."
+60,Épicerie Bio Verte,2026-03-30,4,"J'apprécie la qualité, même si certains prix piquent un peu.",positif,qualité|prix,Bonne qualité malgré tarifs élevés
