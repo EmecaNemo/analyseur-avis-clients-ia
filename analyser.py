@@ -33,18 +33,25 @@ class Classification(BaseModel):
     resume: str = Field(description="Point principal de l'avis, 10 mots maximum")
 
 
-def classify(review: str, client: anthropic.Anthropic) -> Classification | None:
-    """Envoie un avis à Claude et renvoie sa classification validée."""
+def classify_with_usage(
+    review: str, client: anthropic.Anthropic, model: str = MODEL
+) -> tuple[Classification | None, anthropic.types.Usage]:
+    """Envoie un avis à Claude ; renvoie la classification validée et la consommation de tokens."""
     response = client.messages.parse(
-        model=MODEL,
-        max_tokens=1024,
+        model=model,
+        max_tokens=4096,  # marge pour les modèles qui réfléchissent avant de répondre
         system=SYSTEM_PROMPT,
         messages=[{"role": "user", "content": review}],
         output_format=Classification,
     )
-    if response.stop_reason == "refusal":
-        return None
-    return response.parsed_output
+    if response.stop_reason in ("refusal", "max_tokens"):
+        return None, response.usage
+    return response.parsed_output, response.usage
+
+
+def classify(review: str, client: anthropic.Anthropic) -> Classification | None:
+    """Envoie un avis à Claude et renvoie sa classification validée."""
+    return classify_with_usage(review, client)[0]
 
 
 def classify_dataframe(

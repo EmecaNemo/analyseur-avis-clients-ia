@@ -91,10 +91,14 @@ def recommend(df: pd.DataFrame, themes: pd.DataFrame, client: anthropic.Anthropi
             max_tokens=1024,
             messages=[{"role": "user", "content": prompt}],
         )
-        recommendations[commerce] = next(
-            (b.text.strip() for b in response.content if b.type == "text"), ""
-        )
+        text = next((b.text for b in response.content if b.type == "text"), "")
+        recommendations[commerce] = strip_headings(text)
     return recommendations
+
+
+def strip_headings(text: str) -> str:
+    """Retire les titres Markdown que le modèle ajoute parfois avant la liste."""
+    return "\n".join(line for line in text.splitlines() if not line.lstrip().startswith("#")).strip()
 
 
 def plot_sentiments(table: pd.DataFrame) -> plt.Figure:

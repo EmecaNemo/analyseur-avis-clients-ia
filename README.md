@@ -5,6 +5,8 @@ par **sentiment** (positif / neutre / négatif) et par **thématique** (service,
 agrège les résultats avec **pandas** pour produire un rapport qui aide les commerçants à
 **prioriser leurs actions**.
 
+**🔗 Démo en ligne : [analyseur-avis-clients-ia.streamlit.app](https://analyseur-avis-clients-ia-pcbbrzdkdfc9gd4qg7frch.streamlit.app/)**
+
 ## Fonctionnement
 
 ```
@@ -52,6 +54,11 @@ sans appel à l'API.
 ## Résultats
 
 Le rapport complet est disponible dans [`output/rapport.md`](output/rapport.md).
+
+**Évaluation :** `python evaluer.py` compare Claude Haiku 4.5, Sonnet 5 et Opus 5 sur les 60 avis,
+face à des annotations manuelles ([`data/annotations.csv`](data/annotations.csv)) : exactitude du
+sentiment, F1 sur les thématiques, coût pour 1 000 avis et latence. Résultats :
+[`output/evaluation.md`](output/evaluation.md).
 
 **Contrôle de cohérence :** le sentiment détecté par le modèle (`claude-haiku-4-5`) correspond à la
 note laissée par le client (1-2 ★ = négatif, 3 ★ = neutre, 4-5 ★ = positif) pour **56 avis sur 60 (93 %)**.
